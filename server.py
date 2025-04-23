@@ -105,7 +105,7 @@ def match_order(quiz_id):
     question = match_quizzes[quiz_id]
     options = question["answer"].copy()
     random.shuffle(options)
-
+    qnum = quiz_id
     if request.method == 'POST':
         selected = request.form.get('option')
         answers = session.get('answers', [])
