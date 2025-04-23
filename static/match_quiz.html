@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Match Order Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .qz-match-audio-player {
+      position: relative;
+      width: 560px;
+      height: 315px;
+    }
+
+    .qz-match-audio-player iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .qz-match-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .qz-match-overlay img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="qz-match-container">
+    <h2>Arrange the Polyrhythms in Order</h2>
+
+    <div class="qz-match-box">
+      <div class="qz-match-audio-wrapper">
+        <div class="qz-match-audio-player">
+          <iframe
+            src="{{ question.media }}"
+            title="YouTube Player"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            frameborder="0"
+          ></iframe>
+          <div class="qz-match-overlay" onclick="this.style.display='none';">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwFgRV7Uzc-1KYTeMD0qIgOuvEH78M-3uvw&s" alt="Sound Icon">
+            <span>Click to play</span>
+          </div>
+        </div>
+
+        <div class="qz-match-question-text">
+          <p><strong>Listen to the audio and arrange the following polyrhythms in the correct order:</strong></p>
+        </div>
+      </div>
+
+      <form method="POST" id="qz-quiz-form" action="{{ url_for('match_order', quiz_id=quiz_id) }}">
+        <div class="qz-draggable-container">
+          {% for option in options %}
+            <div class="qz-draggable-box" id="draggable-{{ loop.index }}" draggable="true">
+              <input type="hidden" name="answers[]" value="{{ option }}">
+              {{ option }}
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="qz-drop-area">
+          <div class="qz-drop-box" id="drop-1">1st</div>
+          <div class="qz-drop-box" id="drop-2">2nd</div>
+          <div class="qz-drop-box" id="drop-3">3rd</div>
+          <div class="qz-drop-box" id="drop-4">4th</div>
+        </div>
+      </form>
+    </div>
+
+    <div class="qz-submit-btn-container">
+      <button type="button" class="qz-submit-btn" onclick="qzSubmitForm()">Submit</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='quiz.js') }}"></script>
+</body>
+</html>

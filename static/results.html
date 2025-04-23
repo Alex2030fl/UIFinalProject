@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <meta http-equiv="refresh" content="3;url={{ url_for('match_order', quiz_id=quiz_id) }}">
+</head>
+<body>
+  <div class="qz-container">
+    <h2>Your Score</h2>
+    <p>You answered {{ score }} out of {{ total }} questions correctly!</p>
+    <p>Redirecting you back to the mix & match quiz...</p>
+  </div>
+</body>
+</html>
+
+
+
