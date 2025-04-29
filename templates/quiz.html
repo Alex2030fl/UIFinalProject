@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+  <div class="qz-container">
+    <h2>Question {{ qnum + 1 }} of {{ total }}</h2>
+
+    <div class="qz-question-box">
+      {% if question.media %}
+      <div class="qz-audio-wrapper">
+        <iframe
+          src="{{ question.media}}"
+          title="Media Player"
+          allow="autoplay"
+          allowfullscreen>
+        </iframe>
+        <div class="qz-overlay">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwFgRV7Uzc-1KYTeMD0qIgOuvEH78M-3uvw&s" alt="Sound Icon">
+          <span>Click to play</span>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="qz-question-text">
+        <p><strong>{{ question.question }}</strong></p>
+       <form method="post" class="qz-options" id="quiz-form">
+          {% for opt in question.options %}
+          <div class="qz-option">
+            <label>
+              <input type="radio" name="option" value="{{ opt }}" required> {{ opt }}
+            </label>
+          </div>
+          {% endfor %}
+
+          <div class="qz-button-container">
+            {% if qnum > 0 %}
+            <a href="{{ url_for('quiz', qnum=qnum - 1) }}" class="qz-prev-btn">
+              <button type="button" class="qz-button">Previous</button>
+            </a>
+            {% endif %}
+
+            <button type="submit" class="qz-button qz-next-btn">Next</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
