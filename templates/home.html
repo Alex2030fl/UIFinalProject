@@ -18,4 +18,12 @@
          style="max-width: 50%; height: auto;">
 </div>
 
+<script>
+    $(document).ready(function() {
+        // Reset progress bar when on home page
+        $('.progress-bar').css('width', '0%');
+        $('#step-labels').empty();
+    });
+</script>
+
 {% endblock %}

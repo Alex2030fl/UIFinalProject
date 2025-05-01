@@ -58,6 +58,12 @@
       <button type="button" id="qz-submit-btn" class="qz-submit-btn">Submit</button>
     </div>
   </div>
+  <script>
+    $(document).ready(function() {
+        // Initialize progress bar for match quiz
+        updateProgressBar({{ quiz_id }}, {{ match_quizzes|length }}, true, 'M');
+    });
+  </script>
 {% endblock %}
   <script src="{{ url_for('static', filename='quiz.js') }}"></script>
 </body>

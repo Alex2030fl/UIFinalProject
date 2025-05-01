@@ -67,7 +67,16 @@ def learn(id):
     prev_lesson = lecture.get(lesson_ids[current_index - 1]) if current_index > 0 else None
     next_lesson = lecture.get(lesson_ids[current_index + 1]) if current_index < len(lesson_ids) - 1 else None
 
-    return render_template('learn.html', current_lesson=current_lesson, prev_lesson=prev_lesson, next_lesson=next_lesson)
+    # return render_template('learn.html', current_lesson=current_lesson, prev_lesson=prev_lesson, next_lesson=next_lesson)
+    return render_template('learn.html', 
+                         current_lesson=current_lesson, 
+                         prev_lesson=prev_lesson, 
+                         next_lesson=next_lesson,
+                         lecture=lecture,
+                         questions=questions,
+                         match_quizzes=match_quizzes)
+
+
 @app.route('/quiz/<int:qnum>', methods=['GET', 'POST'])
 def quiz(qnum):
     if qnum >= len(questions):
@@ -91,7 +100,15 @@ def quiz(qnum):
         else:
             return redirect(url_for('quiz', qnum=qnum + 1))
 
-    return render_template('quiz.html', question=questions[qnum], qnum=qnum, total=len(questions))
+    # return render_template('quiz.html', question=questions[qnum], qnum=qnum, total=len(questions))
+    return render_template('quiz.html', 
+                         question=questions[qnum], 
+                         qnum=qnum, 
+                         total=len(questions),
+                         lecture=lecture,
+                         questions=questions,
+                         match_quizzes=match_quizzes)
+
 
 @app.route('/learning')
 def learning():
@@ -126,11 +143,20 @@ def match_order(quiz_id):
         all_match_answers[quiz_id] = user_answers
         session['answers'] = all_match_answers
 
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return jsonify({
+                'success': True,
+                'redirect_url': url_for('match_results', quiz_id=quiz_id)
+            })
         # Go to results page after quiz completion
         return redirect(url_for('match_results', quiz_id=quiz_id))
 
-    return render_template('match_quiz.html', question=question, options=options, quiz_id=quiz_id)
-
+    # return render_template('match_quiz.html', question=question, options=options, quiz_id=quiz_id)
+    return render_template('match_quiz.html', 
+                         question=question, 
+                         options=options, 
+                         quiz_id=quiz_id,
+                         match_quizzes=match_quizzes)
 
 @app.route('/match-results/<int:quiz_id>')
 def match_results(quiz_id):

@@ -12,10 +12,59 @@
     color: darkgrey !important;
 }
 
+/* Progress Bar Styles */
+.progress-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#progress-bar {
+    height: 20px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #7C4585;
+    transition: width 0.3s ease;
+}
+
+.step-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5px auto 0;
+    font-size: 12px;
+}
+
+.step-label {
+    text-align: center;
+    color: #6c757d;
+    flex: 1;
+    position: relative;
+}
+
+.step-label.active {
+    color: #7C4585;
+    font-weight: bold;
+}
+
+.step-label.completed {
+    color: #28a745;
+}
+
 body {
    font-family: 'Roboto', sans-serif;
     text-align: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-color: #C95792;
 
 }
