@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="qz-container">
+    <h2>Question {{ qnum + 1 }} of {{ total }}</h2>
+
+    <div class="qz-question-box">
+      {% if question.media %}
+        <div class="qz-audio-wrapper">
+          <iframe src="{{ question.media }}" title="Media Player" allow="autoplay" allowfullscreen></iframe>
+          <div class="qz-overlay">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwFgRV7Uzc-1KYTeMD0qIgOuvEH78M-3uvw&s" alt="Sound Icon">
+            <span>Click to play</span>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="qz-question-text">
+        <p><strong>{{ question.question }}</strong></p>
+      </div>
+
+      <form method="post" id="quiz-form">
+        <div class="qz-options">
+          {% for opt in question.options %}
+            <div class="qz-option">
+              <label>
+                <input type="radio" name="option" value="{{ opt }}" required> {{ opt }}
+              </label>
+            </div>
+          {% endfor %}
+        </div>
+
+        </div>
+        <div class="navigation-buttons">
+          {% if qnum > 0 %}
+            <a href="{{ url_for('quiz', qnum=qnum - 1) }}" class="btn btn-primary" id="prev-quiz">Previous</a>
+          {% endif %}
+          <button type="submit" class="btn btn-primary" id="next-quiz">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
