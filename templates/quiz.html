@@ -7,11 +7,10 @@
     <div class="qz-question-box">
       {% if question.media %}
         <div class="qz-audio-wrapper">
-          <iframe src="{{ question.media }}" title="Media Player" allow="autoplay" allowfullscreen></iframe>
-          <div class="qz-overlay">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwFgRV7Uzc-1KYTeMD0qIgOuvEH78M-3uvw&s" alt="Sound Icon">
-            <span>Click to play</span>
-          </div>
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="{{ question.media }}"></iframe>
+          <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+        </div>
+          
         </div>
       {% endif %}
 

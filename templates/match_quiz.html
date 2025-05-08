@@ -18,19 +18,11 @@
     <div class="qz-match-box">
       <div class="qz-match-audio-wrapper">
         <div class="qz-match-audio-player">
-          <iframe
-            src="{{ question.media }}"
-            title="YouTube Player"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-          ></iframe>
-          <div class="qz-match-overlay" onclick="this.style.display='none';">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRwFgRV7Uzc-1KYTeMD0qIgOuvEH78M-3uvw&s" alt="Sound Icon">
-            <span>Click to play</span>
-          </div>
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="{{ question.media }}"></iframe>
         </div>
 
         <div class="qz-match-question-text">
+          <br>
           <p><strong>Listen to the audio and arrange the following polyrhythms in the correct order:</strong></p>
         </div>
       </div>
@@ -58,13 +50,9 @@
       <button type="button" id="qz-submit-btn" class="qz-submit-btn">Submit</button>
     </div>
   </div>
-  <script>
-    $(document).ready(function() {
-        // Initialize progress bar for match quiz
-        updateProgressBar({{ quiz_id }}, {{ match_quizzes|length }}, true, 'M');
-    });
-  </script>
+  
+  
 {% endblock %}
-  <script src="{{ url_for('static', filename='quiz.js') }}"></script>
+  
 </body>
 </html>
