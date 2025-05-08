@@ -30,25 +30,24 @@ lecture = {
     },
 }
 questions = [
-    {"question": "Listen to this song: What polyrhythm do you hear?", "options": ["3:4", "2:3", "2:5"], "answer": "2:3", "media": "https://www.youtube.com/embed/2teP7CIYoII?start=9"},
-    {"question": "Listen to this song: What polyrhythm do you hear?", "options": ["2:3", "3:2", "2:5"], "answer": "2:5", "media": "https://www.youtube.com/embed/m4ur9ZxR0g8?start=4"},
-    {"question": "Listen to this song: What polyrhythm do you hear?", "options": ["3:2", "5:4", "3:4"], "answer": "3:2", "media": "https://www.youtube.com/embed/AdgV3m0GeNc"},
-    {"question": "Listen to this song: What polyrhythm do you hear?", "options": ["5:4", "3:5", "3:4"], "answer": "3:4", "media": "https://www.youtube.com/embed/0xu8T-hnG0w?start=9"},
-    {"question": "Listen to this song: What polyrhythm do you hear?", "options": ["3:5", "2:3", "2:5"], "answer": "3:5", "media": "https://www.youtube.com/embed/XpgMSVZFL30?start=9"}
+    {"question": "Listen to this song: What polyrhythm do you hear?", "options": ["3:4", "2:3", "2:5"], "answer": "2:3", "media": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2092433517%3Fsecret_token%3Ds-59tSheMNF11&color=%237c4585&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"},
+    {"question": "Listen to this song: What polyrhythm do you hear?", "options": ["2:3", "3:4", "2:5"], "answer": "2:5", "media": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2092434474%3Fsecret_token%3Ds-j4i2OlZ5yXm&color=%237c4585&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"},
+    {"question": "Listen to this song: What polyrhythm do you hear?", "options": ["5:4", "3:5", "3:4"], "answer": "3:4", "media": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2092435086%3Fsecret_token%3Ds-UvMsF2aVPKo&color=%237c4585&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"},
+    {"question": "Listen to this song: What polyrhythm do you hear?", "options": ["3:5", "2:3", "2:5"], "answer": "3:5", "media": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2092435479%3Fsecret_token%3Ds-deVlJBZrxFj&color=%237c4585&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"}
 ]
 
 match_quizzes = [
     {
-        "media": "https://www.youtube.com/embed/9cCA6I68rWo",
-        "answer": ["1:1", "2:1", "1:2", "3:1"]
+        "media": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2092456344%3Fsecret_token%3Ds-2wACIXme6qu&color=%237c4585&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
+        "answer": ["1:1", "1:2", "1:3", "2:3"]
     },
     {
-        "media": "https://www.youtube.com/embed/2-TAEFebyEY?start=7&end=19",
+        "media": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2092456485%3Fsecret_token%3Ds-Z3g0VqsWy5g&color=%237c4585&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
         "answer": ["3:1", "3:2", "3:4", "5:4"]
     },
     {
-        "media": "https://www.youtube.com/embed/9cCA6I68rWo?start=27&end=40",
-        "answer": ["4:1", "1:4", "4:2", "2:4"]
+        "media": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2092456611%3Fsecret_token%3Ds-zbOx94mNuls&color=%237c4585&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
+        "answer": ["4:1", "4:2", "3:4", "4:4"]
     }
 ]
 
