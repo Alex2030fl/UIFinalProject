@@ -62,11 +62,24 @@
 }
 
 body {
-   font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     /* margin-top: 50px; */
     background-color: #C95792;
 
+}
+
+/* LEARNING */
+.mnemonic {
+    font-weight: bold;
+    font-size: x-large;
+}
+.learning-text{
+    padding-top: 2%;
+}
+.home-text{
+    padding-top: 2%;
+    font-size: x-large;
 }
 
 #start-learning,

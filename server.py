@@ -14,19 +14,22 @@ lecture = {
         "id":"1",
         "title":"2:3",
         "video_link":"https://youtu.be/2teP7CIYoII?si=Hqxqy9yFV3lo3lRJ",
-        "text":"Watch this video. Try speaking the mnemonic device for 2:3: “nice cup of tea”",
+        "text":"Watch this video. As you watch, tap your hands onto your lap along with the blue and yellow spots. Try speaking the mnemonic device for 2:3:",
+        "mnemonic":"“nice cup of tea”"
     },
     "2": {
         "id":"2",
         "title":"3:4",
         "video_link":"https://youtu.be/61W9VthQYHQ?si=jLUjyEKTd5ZSWyem",
-        "text":"Watch this video. Try speaking the mnemonic device for 3:4: “pass the golden butter”",
+        "text":"Watch this video. As you watch, tap your hands onto your lap along with the teal and red spots. Try speaking the mnemonic device for 3:4:",
+        "mnemonic": "“pass the golden butter”"
     },
     "3": {
         "id":"3",
         "title":"4:5",
         "video_link":"https://youtu.be/2OCfwdANMkk?si=bH8O5W625RRTg4FL",
-        "text":"Watch this video. Try speaking the mnemonic device for 4:5: “I'm looking for a home to buy”",
+        "text":"Watch this video. As you watch, tap your hands onto your lap along with the red and teal spots. Try speaking the mnemonic device for 4:5:",
+        "mnemonic": "“I'm looking for a home to buy”"
     },
 }
 questions = [
