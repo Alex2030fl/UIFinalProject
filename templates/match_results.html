@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Match Order Quiz Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+  <div class="qz-container">
+    <h2>Your Score for the Match Quiz</h2>
+    <p>You scored </p>
+    <br>
+    <h1 class="result-text"><b>{{ score }} out of {{ total }}</b></h1>
+    <br>
+
+    <p><strong>{{ message }}</strong></p>
+
+    <meta http-equiv="refresh" content="3;url={{ next_quiz_url }}">
+
+  </div>
+</body>
+</html>
